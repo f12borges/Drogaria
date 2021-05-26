@@ -1,12 +1,11 @@
-package br.com.borges.drogaria.main;
+package br.com.borges.drogaria.util;
 
 import org.hibernate.Session;
-
-import br.com.borges.drogaria.util.HibernateUtil;
+import org.junit.Test;
 
 public class HibernateUtilTest {
-	
-	public static void main(String[] args) {
+	@Test
+	public void testeConexao() {
 		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession();
 		sessao.close();
 		HibernateUtil.getFabricaDeSessoes().close();
