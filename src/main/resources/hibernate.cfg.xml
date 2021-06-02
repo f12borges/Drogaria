@@ -31,7 +31,8 @@
 		<!-- Drop and re-create the database schema on startup -->
 		<property name="hbm2ddl.auto">create</property>
 		
-		<!-- Verificar depois <mapping resource ="org/hibernate/tutorial/domain/Event.hbm.xml"/> -->
+		<!-- Mapeamentos das entidades -->		
+		<mapping class="br.com.borges.drogaria.domain.Estado"/>
 		
 	</session-factory>
 </hibernate-configuration>

@@ -13,7 +13,9 @@ import javax.persistence.MappedSuperclass;
 public class GenericDomain implements Serializable {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
+	public int id;
 	
 	private Long codigo;
 
