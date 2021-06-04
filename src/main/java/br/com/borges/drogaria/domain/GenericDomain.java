@@ -1,7 +1,7 @@
 package br.com.borges.drogaria.domain;
 
 import java.io.Serializable;
-
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -9,14 +9,13 @@ import javax.persistence.MappedSuperclass;
 
 @SuppressWarnings("serial")
 @MappedSuperclass
-
 public class GenericDomain implements Serializable {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
+	@GeneratedValue(strategy = GenerationType.AUTO)	
 	public int id;
 	
+	@Column(nullable = false)
 	private Long codigo;
 
 	public Long getCodigo() {

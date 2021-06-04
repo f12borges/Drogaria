@@ -19,8 +19,7 @@ public class HibernateUtil {
 			
 			ServiceRegistry registro = new StandardServiceRegistryBuilder().applySettings(configuracao.getProperties()).build();
 			
-			//Retirei o registro para conseguir criar as tabela (...buildSessionFactory(registro))
-			SessionFactory fabrica = configuracao.buildSessionFactory();
+			SessionFactory fabrica = configuracao.buildSessionFactory(registro);
 			
 			return fabrica;
 			}

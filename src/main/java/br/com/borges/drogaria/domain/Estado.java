@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 
 @SuppressWarnings("serial")
 @Entity
-
 public class Estado extends GenericDomain {
 
 	@Column(length = 2, nullable = false)
