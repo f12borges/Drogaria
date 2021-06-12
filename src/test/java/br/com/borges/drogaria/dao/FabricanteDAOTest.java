@@ -9,7 +9,7 @@ public class FabricanteDAOTest {
 
 	@Test
 	@Ignore
-	public void salvar() {
+	public void salvar () {
 
 		Fabricante fabricante = new Fabricante();
 		fabricante.setDescricao("TESTE");
@@ -21,7 +21,7 @@ public class FabricanteDAOTest {
 
 	@Test
 	@Ignore
-	public void listar() {
+	public void listar () {
 		FabricanteDAO FabricanteDAO = new FabricanteDAO();
 		List<Fabricante> resultado = FabricanteDAO.listar();
 
@@ -33,7 +33,8 @@ public class FabricanteDAOTest {
 	}
 	
 	@Test
-	public void buscar(){
+	@Ignore
+	public void buscar (){
 		Long codigo = 1L;
 		
 		FabricanteDAO fabricanteDAO = new FabricanteDAO();
@@ -43,6 +44,43 @@ public class FabricanteDAOTest {
 			System.out.println("\nNenhum registro encontrado!");
 		}else{
 			System.out.println("\nRegistro encontrado:");
+			System.out.println("\n" +fabricante.getCodigo() + " - " + fabricante.getDescricao());
+		}
+	}
+	
+	@Test
+	@Ignore
+	public void excluir () {
+		Long codigo = 5L;
+
+		FabricanteDAO fabricanteDAO = new FabricanteDAO();
+		Fabricante fabricante = fabricanteDAO.buscar(codigo);
+				
+		if (fabricante == null) {
+			System.out.println("\nNenhum registro encontrado!");
+		} else {
+			fabricanteDAO.excluir(fabricante);
+			System.out.println("\nRegistro excluído:");
+			System.out.println("\n" +fabricante.getCodigo() + " - " + fabricante.getDescricao());
+		}
+	}
+	
+	@Test
+	public void editar () {
+		Long codigo = 8L;
+
+		FabricanteDAO fabricanteDAO = new FabricanteDAO();
+		Fabricante fabricante = fabricanteDAO.buscar(codigo);
+				
+		if (fabricante == null) {
+			System.out.println("\nNenhum registro encontrado!");
+		} else {
+			System.out.println("\nRegistro selecionado:");
+			System.out.println("\n" +fabricante.getCodigo() + " - " + fabricante.getDescricao());
+			
+			fabricante.setDescricao("Janssen");
+			
+			System.out.println("\nRegistro atualizado:");
 			System.out.println("\n" +fabricante.getCodigo() + " - " + fabricante.getDescricao());
 		}
 	}
