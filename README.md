@@ -66,7 +66,7 @@ git clone https://github.com/f12borges/Drogaria
 #### ⏭ Executando o projeto
 
 Passos:
-1. Para executar o projeto, é necessário importa-lo utilizando o Eclipse, para que o mesmo identifique as dependências necessárias para a execução no repositório .m2 do Maven.
+1. Para executar o projeto, é necessário importa-lo utilizando o Eclipse, para que o mesmo identifique as dependências necessárias para a execução e baixe-as no repositório .m2 do Maven.
 
 2. Configurar o banco de dados.
 
