@@ -23,10 +23,11 @@
 =================
 <!--ts-->
    * [Sobre o projeto](#-sobre-o-projeto)
-   * * [Layout](#-layout) 
+   * [Layout](#-layout) 
    * [Pré-requisitos](#-pré-requisitos)
      * [Baixando o projeto](#-baixando-o-projeto)
      * [Executando o projeto](#-executando-o-projeto)
+   * [Contribuições](#-contribuições)
    * [Autor](#-autor)
    * [Licença](#-licença)
 
