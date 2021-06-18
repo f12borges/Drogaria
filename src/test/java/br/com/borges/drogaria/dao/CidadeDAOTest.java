@@ -9,7 +9,7 @@ import br.com.borges.drogaria.domain.Estado;
 public class CidadeDAOTest {
 
 	@Test
-	@Ignore
+	//@Ignore
 	public void salvar() {
 
 		Long codigoEstado = 1L;
@@ -18,7 +18,7 @@ public class CidadeDAOTest {
 		Estado estado = estadoDAO.buscar(codigoEstado);
 
 		Cidade cidade = new Cidade();
-		cidade.setNome("Jaú");
+		cidade.setNome("São Paulo");
 		cidade.setEstado(estado);
 
 		CidadeDAO cidadeDAO = new CidadeDAO();

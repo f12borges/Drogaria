@@ -12,7 +12,7 @@ public class FabricanteDAOTest {
 	public void salvar () {
 
 		Fabricante fabricante = new Fabricante();
-		fabricante.setDescricao("TESTE");
+		fabricante.setDescricao("Sinovac");
 
 		FabricanteDAO fabricanteDAO = new FabricanteDAO();
 		fabricanteDAO.salvar(fabricante);
@@ -66,6 +66,7 @@ public class FabricanteDAOTest {
 	}
 	
 	@Test
+	@Ignore
 	public void editar () {
 		Long codigo = 8L;
 
