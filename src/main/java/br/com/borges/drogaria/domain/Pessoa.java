@@ -2,6 +2,8 @@ package br.com.borges.drogaria.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @SuppressWarnings("serial")
 @Entity
@@ -24,6 +26,10 @@ public class Pessoa extends GenericDomain {
 	
 	@Column(length = 30, nullable = false)
 	private String bairro;
+	
+	@ManyToOne
+	@JoinColumn(nullable = false)
+	private Cidade cidade;
 	
 	@Column(length = 10, nullable = false)
 	private String cep;
@@ -86,6 +92,14 @@ public class Pessoa extends GenericDomain {
 
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
+	}
+
+	public Cidade getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(Cidade cidade) {
+		this.cidade = cidade;
 	}
 
 	public String getCep() {

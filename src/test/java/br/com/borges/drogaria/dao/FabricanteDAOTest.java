@@ -8,7 +8,7 @@ import br.com.borges.drogaria.domain.Fabricante;
 public class FabricanteDAOTest {
 
 	@Test
-	@Ignore
+	//@Ignore
 	public void salvar () {
 
 		Fabricante fabricante = new Fabricante();

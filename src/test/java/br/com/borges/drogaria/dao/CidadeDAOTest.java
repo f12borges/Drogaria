@@ -18,7 +18,7 @@ public class CidadeDAOTest {
 		Estado estado = estadoDAO.buscar(codigoEstado);
 
 		Cidade cidade = new Cidade();
-		cidade.setNome("São Paulo");
+		cidade.setNome("Florianópolis");
 		cidade.setEstado(estado);
 
 		CidadeDAO cidadeDAO = new CidadeDAO();

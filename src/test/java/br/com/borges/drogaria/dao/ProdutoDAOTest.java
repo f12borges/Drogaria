@@ -10,7 +10,7 @@ import br.com.borges.drogaria.domain.Produto;
 public class ProdutoDAOTest {
 
 	@Test
-	@Ignore
+	//@Ignore
 	public void salvar() {
 
 		FabricanteDAO fabricanteDAO = new FabricanteDAO();
@@ -19,8 +19,8 @@ public class ProdutoDAOTest {
 		Produto produto = new Produto();
 		produto.setDescricao("CoronaVac");
 		produto.setFabricante(fabricante);
-		produto.setPreco(new BigDecimal("587.90"));
-		produto.setQuantidade(new Short("800"));
+		produto.setPreco(new BigDecimal("922.10"));
+		produto.setQuantidade(new Short("10000"));
 
 		ProdutoDAO produtoDAO = new ProdutoDAO();
 		produtoDAO.salvar(produto);
