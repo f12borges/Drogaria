@@ -23,7 +23,7 @@
 =================
 <!--ts-->
    * [Sobre o projeto](#-sobre-o-projeto)
-   * [Layout](#-layout) 
+   * [Layout](#-layout)
    * [Pré-requisitos](#-pré-requisitos)
      * [Baixando o projeto](#-baixando-o-projeto)
      * [Executando o projeto](#-executando-o-projeto)
@@ -41,7 +41,7 @@ Este projeto tem como objetivo atender uma drogaria com as funcionalidades bási
 
 ## 🧩 Layout
 
-O layout da aplicação será desenvolvido em breve.
+O layout do programa será desenvolvido em breve.
 
 ---
 
@@ -49,8 +49,8 @@ O layout da aplicação será desenvolvido em breve.
 
 Para executar o projeto, será necessário instalar os seguintes programas:
 
+- [Git](https://git-scm.com) Necessário para realizar o download do projeto.
 - [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk10-downloads-4416644.html) Necessário para executar o projeto Java.
-- [Git](https://git-scm.com) Necessário para realizar o dowload do projeto.
 - [Eclipse](https://www.eclipse.org/downloads/packages/release/2021-03/r/eclipse-ide-java-developers) Para desenvolvimento do projeto.
 - [MySQL Workbench](https://dev.mysql.com/downloads/windows/installer/8.0.html) Banco de dados utilizado no projeto.
 
@@ -68,8 +68,25 @@ git clone https://github.com/f12borges/Drogaria
 Passos:
 1. Para executar o projeto, é necessário importa-lo utilizando o Eclipse, para que o mesmo identifique as dependências necessárias para a execução e baixe-as no repositório .m2 do Maven.
 
+```bash
+# No eclipse
+File > Import > Maven > Existing Maven Porjects > Next
+
+Em Root Directory informe o diretório onde baixou o projeto e o mesmo será apresentado para importação.
+
+Selecione-o e clique no botão Finish.
+```
+
 2. Configurar o banco de dados.
 
+```bash
+# No Workbench
+Crie um banco de dados com as informações contidas no arquivo hibernate.cfg.xml.
+
+Altere a propriedade hbm2ddl.auto para create (apenas para primeira execução e depois volte para validate) para que as tabelas sejam criadas no banco.
+
+Execute o HibernateUtilTest.java com Run As JUnit Test para que as tabelas sejam criadas.
+```
 ---
 ## 🤜🏻🤛🏻 Contribuições
 
