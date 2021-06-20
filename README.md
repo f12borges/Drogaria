@@ -83,7 +83,8 @@ Selecione-o e clique no botão Finish.
 # No Workbench
 Crie um banco de dados com as informações contidas no arquivo hibernate.cfg.xml.
 
-Altere a propriedade hbm2ddl.auto para create (apenas para primeira execução e depois volte para validate) para que as tabelas sejam criadas no banco.
+Altere a propriedade hbm2ddl.auto para create (apenas para primeira execução e depois volte
+para validate) para que as tabelas sejam criadas no banco.
 
 Execute o HibernateUtilTest.java com Run As JUnit Test para que as tabelas sejam criadas.
 ```
