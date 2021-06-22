@@ -10,7 +10,7 @@ import br.com.borges.drogaria.domain.Produto;
 public class ProdutoDAOTest {
 
 	@Test
-	//@Ignore
+	@Ignore
 	public void salvar() {
 
 		FabricanteDAO fabricanteDAO = new FabricanteDAO();
