@@ -15,9 +15,9 @@ public class UsuarioDAOTest {
 	public void salvar() {
 
 		PessoaDAO pessoaDAO = new PessoaDAO();
-
 		Pessoa pessoa = pessoaDAO.buscar(2L);
 
+		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		Usuario usuario = new Usuario();
 
 		usuario.setAtivo(true);
@@ -25,10 +25,7 @@ public class UsuarioDAOTest {
 		usuario.setSenha("q1w2e3r4");
 		usuario.setTipo('F');
 
-		UsuarioDAO usuarioDAO = new UsuarioDAO();
-
 		usuarioDAO.salvar(usuario);
-
 	}
 
 	@Test
@@ -39,56 +36,57 @@ public class UsuarioDAOTest {
 
 		List<Usuario> resultado = usuarioDAO.listar();
 
+		// Teste de lista de registros.
 		for (Usuario usuario : resultado) {
-
-			System.out.println("Listar: " + usuario.getPessoa().getNome());
-
+			System.out.println("Listar:");
+			System.out.println("Nome: " + usuario.getPessoa().getNome());
+			System.out.println("Tipo: " + usuario.getTipo());
+			System.out.println("Ativo: " + usuario.getAtivo());
+			System.out.println("Senha: " + usuario.getSenha());
+			System.out.println();
 		}
-
 	}
 
 	@Test
 	@Ignore
 	public void buscar() {
 
-		Long codigo = 2L;
-
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
+		Usuario usuario = usuarioDAO.buscar(1L);
 
-		Usuario usuario = usuarioDAO.buscar(codigo);
-
-		System.out.println("Listar: " + usuario.getPessoa().getNome());
-
+		// Teste de busca de registros.
+		System.out.println("Buscar:");
+		System.out.println("Nome: " + usuario.getPessoa().getNome());
+		System.out.println("Tipo: " + usuario.getTipo());
+		System.out.println("Ativo: " + usuario.getAtivo());
+		System.out.println("Senha: " + usuario.getSenha());
+		System.out.println();
 	}
 
 	@Test
 	@Ignore
 	public void excluir() {
 
-		Long codigo = 4L;
-
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
+		Usuario usuario = usuarioDAO.buscar(6L);
 
-		Usuario usuario = usuarioDAO.buscar(codigo);
-		
 		usuarioDAO.excluir(usuario);
-
 	}
-	
+
 	@Test
-	@Ignore
+	// @Ignore
 	public void eidtar() {
-		
-		Long codigo = 3L;
 
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
+		Usuario usuario = usuarioDAO.buscar(3L);
 
-		Usuario usuario = usuarioDAO.buscar(codigo);
-		
-		usuario.setTipo('A');
-		
+		PessoaDAO pessoaDAO = new PessoaDAO();
+		Pessoa pessoa = pessoaDAO.buscar(3L);
+
+		usuario.setAtivo(true);
+		usuario.setPessoa(pessoa);
+		usuario.setSenha("q1w2e3r4");
+		usuario.setTipo('B');
 		usuarioDAO.editar(usuario);
-		
 	}
-
 }

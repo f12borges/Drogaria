@@ -8,10 +8,10 @@ import javax.persistence.ManyToOne;
 @SuppressWarnings("serial")
 @Entity
 public class Cidade extends GenericDomain {
-	
-	@Column (length = 50, nullable = false)
+
+	@Column(length = 50, nullable = false)
 	private String nome;
-	
+
 	@ManyToOne
 	@JoinColumn(nullable = false)
 	private Estado estado;
@@ -31,5 +31,4 @@ public class Cidade extends GenericDomain {
 	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
-
 }

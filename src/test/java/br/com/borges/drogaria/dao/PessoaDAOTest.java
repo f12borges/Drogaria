@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.junit.Ignore;
 import org.junit.Test;
+
 import br.com.borges.drogaria.domain.Cidade;
 import br.com.borges.drogaria.domain.Pessoa;
 
@@ -13,12 +14,10 @@ public class PessoaDAOTest {
 	@Ignore
 	public void salvar() {
 
-		Long codigoCidade = 1L;
-
 		CidadeDAO cidadeDAO = new CidadeDAO();
+		Cidade cidade = cidadeDAO.buscar(1L);
 
-		Cidade cidade = cidadeDAO.buscar(codigoCidade);
-
+		PessoaDAO pessoaDAO = new PessoaDAO();
 		Pessoa pessoa = new Pessoa();
 
 		pessoa.setNome("Fernando Borges");
@@ -33,10 +32,7 @@ public class PessoaDAOTest {
 		pessoa.setEmail("1@email.com");
 		pessoa.setCidade(cidade);
 
-		PessoaDAO pessoaDAO = new PessoaDAO();
-
 		pessoaDAO.salvar(pessoa);
-
 	}
 
 	@Test
@@ -47,53 +43,81 @@ public class PessoaDAOTest {
 
 		List<Pessoa> resultado = pessoaDAO.listar();
 
+		// Teste de lista de registros.
 		for (Pessoa pessoa : resultado) {
-			System.out.println("Listar: " + pessoa.getNome() + ".");
+			System.out.println("Listar:");
+			System.out.println("Nome: " + pessoa.getNome());
+			System.out.println("RG: " + pessoa.getRg());
+			System.out.println("CPF: " + pessoa.getCpf());
+			System.out.println("Celular: " + pessoa.getCelular());
+			System.out.println("Telefone: " + pessoa.getTelefone());
+			System.out.println("E-mail: " + pessoa.getEmail());
+			System.out.println("Rua: " + pessoa.getRua());
+			System.out.println("Número: " + pessoa.getNumero());
+			System.out.println("Complemento: " + pessoa.getComplemento());
+			System.out.println("CEP: " + pessoa.getCep());
+			System.out.println("Bairro: " + pessoa.getBairro());
+			System.out.println("Cidade: " + pessoa.getCidade().getNome());
+			System.out.println();
 		}
-
 	}
 
 	@Test
 	@Ignore
 	public void buscar() {
 
-		Long codigo = 1L;
-
 		PessoaDAO pessoaDAO = new PessoaDAO();
+		Pessoa pessoa = pessoaDAO.buscar(1L);
 
-		Pessoa pessoa = pessoaDAO.buscar(codigo);
-
-		System.out.println("Buscar: " + pessoa.getNome() + ".");
-
+		// Teste de busca de registros.
+		System.out.println("Listar:");
+		System.out.println("Nome: " + pessoa.getNome());
+		System.out.println("RG: " + pessoa.getRg());
+		System.out.println("CPF: " + pessoa.getCpf());
+		System.out.println("Celular: " + pessoa.getCelular());
+		System.out.println("Telefone: " + pessoa.getTelefone());
+		System.out.println("E-mail: " + pessoa.getEmail());
+		System.out.println("Rua: " + pessoa.getRua());
+		System.out.println("Número: " + pessoa.getNumero());
+		System.out.println("Complemento: " + pessoa.getComplemento());
+		System.out.println("CEP: " + pessoa.getCep());
+		System.out.println("Bairro: " + pessoa.getBairro());
+		System.out.println("Cidade: " + pessoa.getCidade().getNome());
+		System.out.println();
 	}
 
 	@Test
 	@Ignore
 	public void excluir() {
 
-		Long codigo = 1L;
-
 		PessoaDAO pessoaDAO = new PessoaDAO();
-
-		Pessoa pessoa = pessoaDAO.buscar(codigo);
+		Pessoa pessoa = pessoaDAO.buscar(4L);
 
 		pessoaDAO.excluir(pessoa);
-
 	}
 
 	@Test
+	@Ignore
 	public void editar() {
 
-		Long codigo = 3L;
+		CidadeDAO cidadeDAO = new CidadeDAO();
+		Cidade cidade = cidadeDAO.buscar(1L);
 
 		PessoaDAO pessoaDAO = new PessoaDAO();
+		Pessoa pessoa = pessoaDAO.buscar(3L);
 
-		Pessoa pessoa = pessoaDAO.buscar(codigo);
-
-		pessoa.setCelular("19");
+		pessoa.setNome("Eli");
+		pessoa.setCpf("11111111111");
+		pessoa.setRg("111111111");
+		pessoa.setRua("Rua 1");
+		pessoa.setNumero(new Short("1"));
+		pessoa.setBairro("Jardim 1");
+		pessoa.setCep("11111111");
+		pessoa.setTelefone("1611111111");
+		pessoa.setCelular("16111111111");
+		pessoa.setEmail("f12borges@gmail.com");
+		pessoa.setCidade(cidade);
 
 		pessoaDAO.editar(pessoa);
-
 	}
-
 }

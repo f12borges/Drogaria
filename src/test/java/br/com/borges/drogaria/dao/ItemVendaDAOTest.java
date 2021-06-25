@@ -14,28 +14,23 @@ public class ItemVendaDAOTest {
 
 	@Test
 	@Ignore
-
 	public void salvar() {
 
 		ProdutoDAO produtoDAO = new ProdutoDAO();
-
 		Produto produto = produtoDAO.buscar(1L);
 
 		VendaDAO vendaDAO = new VendaDAO();
-
 		Venda venda = vendaDAO.buscar(1L);
 
+		ItemVendaDAO itemVendaDAO = new ItemVendaDAO();
 		ItemVenda itemVenda = new ItemVenda();
 
 		itemVenda.setProduto(produto);
-		itemVenda.setQuantidade(new Short("10"));
-		itemVenda.setValorParcial(new BigDecimal("22.10"));
+		itemVenda.setQuantidade(new Short("1"));
+		itemVenda.setValorParcial(new BigDecimal("1.0"));
 		itemVenda.setVenda(venda);
 
-		ItemVendaDAO itemVendaDAO = new ItemVendaDAO();
-
 		itemVendaDAO.salvar(itemVenda);
-
 	}
 
 	@Test
@@ -46,55 +41,61 @@ public class ItemVendaDAOTest {
 
 		List<ItemVenda> resultado = itemVendaDAO.listar();
 
+		// Teste de lista de registros.
 		for (ItemVenda itemVenda : resultado) {
-
-			System.out.println("Listar: " + itemVenda.getCodigo());
+			System.out.println("Listar:");
+			System.out.println("Venda: " + itemVenda.getVenda().getCodigo());
+			System.out.println("Produto: " + itemVenda.getProduto().getDescricao());
+			System.out.println("Quantidade: " + itemVenda.getQuantidade());
+			System.out.println("Valor Parcial: " + itemVenda.getValorParcial());
+			System.out.println();
 		}
-
 	}
 
 	@Test
 	@Ignore
 	public void buscar() {
 
-		Long codigo = 1L;
-
 		ItemVendaDAO itemVendaDAO = new ItemVendaDAO();
+		ItemVenda itemVenda = itemVendaDAO.buscar(6L);
 
-		ItemVenda itemVenda = itemVendaDAO.buscar(codigo);
-
-		System.out.println("Buscar: " + itemVenda.getCodigo());
-
+		// Teste de busca de registros.
+		System.out.println("Buscar:");
+		System.out.println("Venda: " + itemVenda.getVenda().getCodigo());
+		System.out.println("Produto: " + itemVenda.getProduto().getDescricao());
+		System.out.println("Quantidade: " + itemVenda.getQuantidade());
+		System.out.println("Valor Parcial: " + itemVenda.getValorParcial());
+		System.out.println();
 	}
 
 	@Test
 	@Ignore
 	public void excluir() {
 
-		Long codigo = 1L;
-
 		ItemVendaDAO itemVendaDAO = new ItemVendaDAO();
+		ItemVenda itemVenda = itemVendaDAO.buscar(9L);
 
-		ItemVenda itemVenda = itemVendaDAO.buscar(codigo);
-		
 		itemVendaDAO.excluir(itemVenda);
-
 	}
-	
+
 	@Test
 	@Ignore
 	public void editar() {
-		
-		Long codigo = 3L;
+
+		ProdutoDAO produtoDAO = new ProdutoDAO();
+		Produto produto = produtoDAO.buscar(3L);
+
+		VendaDAO vendaDAO = new VendaDAO();
+		Venda venda = vendaDAO.buscar(3L);
 
 		ItemVendaDAO itemVendaDAO = new ItemVendaDAO();
+		ItemVenda itemVenda = itemVendaDAO.buscar(3L);
 
-		ItemVenda itemVenda = itemVendaDAO.buscar(codigo);
-		
-		itemVenda.setQuantidade(new Short("1"));
-		
+		itemVenda.setProduto(produto);
+		itemVenda.setQuantidade(new Short("3"));
+		itemVenda.setValorParcial(new BigDecimal("3000.00"));
+		itemVenda.setVenda(venda);
+
 		itemVendaDAO.editar(itemVenda);
-		
 	}
-
 }

@@ -1,92 +1,72 @@
 package br.com.borges.drogaria.dao;
 
 import java.util.List;
+
 import org.junit.Ignore;
 import org.junit.Test;
+
 import br.com.borges.drogaria.domain.Estado;
 
 public class EstadoDAOTest {
 
 	@Test
-	//@Ignore
-	public void salvar () {
+	@Ignore
+	public void salvar() {
 
+		EstadoDAO estadoDAO = new EstadoDAO();
 		Estado estado = new Estado();
+
 		estado.setNome("Santa Catarina");
 		estado.setSigla("SC");
 
-		EstadoDAO estadoDAO = new EstadoDAO();
 		estadoDAO.salvar(estado);
-
 	}
 
 	@Test
 	@Ignore
-	public void listar () {
+	public void listar() {
+
 		EstadoDAO estadoDAO = new EstadoDAO();
+
 		List<Estado> resultado = estadoDAO.listar();
 
-		System.out.println("\nTotal de registros encontados: " + resultado.size());
-
+		// Teste de lista de registros.
 		for (Estado estado : resultado) {
-			System.out.println("\n" + estado.getCodigo() + " " + estado.getNome() + " " + estado.getSigla());
+			System.out.println("Listar: " + estado.getCodigo() + " " + estado.getNome() + " " + estado.getSigla());
 		}
-
 	}
 
 	@Test
 	@Ignore
-	public void buscar () {
-		Long codigo = 2L;
+	public void buscar() {
 
 		EstadoDAO estadoDAO = new EstadoDAO();
-		Estado estado = estadoDAO.buscar(codigo);
+		Estado estado = estadoDAO.buscar(2L);
 
-		if (estado == null) {
-			System.out.println("\nNenhum registro encontrado!");
-		} else {
-			System.out.println("\nRegistro encontrado:");
-			System.out.println("\n" + estado.getCodigo() + " - " + estado.getSigla() + " - " + estado.getNome());
-		}
+		// Teste de busca de registros.
+		System.out.println("Buscar: " + estado.getCodigo() + " - " + estado.getSigla() + " - " + estado.getNome());
 	}
-	
+
 	@Test
 	@Ignore
-	public void excluir () {
-		Long codigo = 2L;
+	public void excluir() {
 
 		EstadoDAO estadoDAO = new EstadoDAO();
-		Estado estado = estadoDAO.buscar(codigo);
-				
-		if (estado == null) {
-			System.out.println("\nNenhum registro encontrado!");
-		} else {
-			estadoDAO.excluir(estado);
-			System.out.println("\nRegistro excluído:");
-			System.out.println("\n" + estado.getCodigo() + " - " + estado.getSigla() + " - " + estado.getNome());
-		}
+		Estado estado = estadoDAO.buscar(2L);
+
+		estadoDAO.excluir(estado);
 	}
-	
+
 	@Test
 	@Ignore
-	public void editar () {
-		Long codigo = 4L;
+	public void editar() {
 
 		EstadoDAO estadoDAO = new EstadoDAO();
-		Estado estado = estadoDAO.buscar(codigo);
-				
-		if (estado == null) {
-			System.out.println("\nNenhum registro encontrado!");
-		} else {
-			System.out.println("\nRegistro selecionado:");
-			System.out.println("\n" + estado.getCodigo() + " - " + estado.getSigla() + " - " + estado.getNome());
-			
-			estado.setSigla("BA");
-			estado.setNome("Bahia");
-			estadoDAO.editar(estado);
-			
-			System.out.println("\nRegistro atualizado:");
-			System.out.println("\n" + estado.getCodigo() + " - " + estado.getSigla() + " - " + estado.getNome());
-		}
+		Estado estado = estadoDAO.buscar(2L);
+
+		estado.setSigla("BA");
+		estado.setNome("Bahia");
+
+		estadoDAO.editar(estado);
 	}
 }

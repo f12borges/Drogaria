@@ -30,18 +30,18 @@
 
 		<!-- Drop and re-create the database schema on startup -->
 		<property name="hbm2ddl.auto">validate</property>
-		
+
 		<!-- Mapeamentos das entidades -->
-		<mapping class="br.com.borges.drogaria.domain.Cidade"/>
-		<mapping class="br.com.borges.drogaria.domain.Cliente"/>
-		<mapping class="br.com.borges.drogaria.domain.Estado"/>
-		<mapping class="br.com.borges.drogaria.domain.Fabricante"/>
-		<mapping class="br.com.borges.drogaria.domain.Funcionario"/>
-		<mapping class="br.com.borges.drogaria.domain.ItemVenda"/>
-		<mapping class="br.com.borges.drogaria.domain.Pessoa"/>
-		<mapping class="br.com.borges.drogaria.domain.Produto"/>
-		<mapping class="br.com.borges.drogaria.domain.Usuario"/>
-		<mapping class="br.com.borges.drogaria.domain.Venda"/>
-		
+		<mapping class="br.com.borges.drogaria.domain.Cidade" />
+		<mapping class="br.com.borges.drogaria.domain.Cliente" />
+		<mapping class="br.com.borges.drogaria.domain.Estado" />
+		<mapping class="br.com.borges.drogaria.domain.Fabricante" />
+		<mapping class="br.com.borges.drogaria.domain.Funcionario" />
+		<mapping class="br.com.borges.drogaria.domain.ItemVenda" />
+		<mapping class="br.com.borges.drogaria.domain.Pessoa" />
+		<mapping class="br.com.borges.drogaria.domain.Produto" />
+		<mapping class="br.com.borges.drogaria.domain.Usuario" />
+		<mapping class="br.com.borges.drogaria.domain.Venda" />
+
 	</session-factory>
 </hibernate-configuration>

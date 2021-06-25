@@ -17,5 +17,4 @@ public class Fabricante extends GenericDomain {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-
 }

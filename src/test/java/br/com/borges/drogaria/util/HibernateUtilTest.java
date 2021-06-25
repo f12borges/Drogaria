@@ -1,6 +1,7 @@
 package br.com.borges.drogaria.util;
 
 import org.hibernate.Session;
+
 import org.junit.Test;
 
 public class HibernateUtilTest {

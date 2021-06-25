@@ -19,24 +19,20 @@ public class VendaDAOTest {
 	public void salvar() {
 
 		ClienteDAO clienteDAO = new ClienteDAO();
-
-		Cliente cliente = clienteDAO.buscar(4L);
+		Cliente cliente = clienteDAO.buscar(1L);
 
 		FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
-
 		Funcionario funcionario = funcionarioDAO.buscar(1L);
 
+		VendaDAO vendaDAO = new VendaDAO();
 		Venda venda = new Venda();
 
 		venda.setCliente(cliente);
 		venda.setFuncionario(funcionario);
 		venda.setHorario(new Date());
-		venda.setValorTotal(new BigDecimal("1.10"));
-
-		VendaDAO vendaDAO = new VendaDAO();
+		venda.setValorTotal(new BigDecimal("155.10"));
 
 		vendaDAO.salvar(venda);
-
 	}
 
 	@Test
@@ -47,55 +43,61 @@ public class VendaDAOTest {
 
 		List<Venda> resultado = vendaDAO.listar();
 
+		// Teste de lista de registros.
 		for (Venda venda : resultado) {
-
-			System.out.println("Listar: " + venda.getCodigo() + " " + venda.getHorario());
+			System.out.println("Listar:");
+			System.out.println("Nome Funcionario: " + venda.getFuncionario().getPessoa().getNome());
+			System.out.println("Nome Cliente: " + venda.getCliente().getPessoa().getNome());
+			System.out.println("Valor: " + venda.getValorTotal());
+			System.out.println("Horário: " + venda.getHorario());
+			System.out.println();
 		}
-
 	}
 
 	@Test
 	@Ignore
 	public void buscar() {
 
-		Long codigo = 4L;
-
 		VendaDAO vendaDAO = new VendaDAO();
+		Venda venda = vendaDAO.buscar(6L);
 
-		Venda venda = vendaDAO.buscar(codigo);
-
-		System.out.println("Buscar: " + venda.getCodigo() + " " + venda.getHorario());
-
+		// Teste de busca de registros.
+		System.out.println("Buscar:");
+		System.out.println("Nome Funcionario: " + venda.getFuncionario().getPessoa().getNome());
+		System.out.println("Nome Cliente: " + venda.getCliente().getPessoa().getNome());
+		System.out.println("Valor: " + venda.getValorTotal());
+		System.out.println("Horário: " + venda.getHorario());
+		System.out.println();
 	}
 
 	@Test
 	@Ignore
 	public void excluir() {
 
-		Long codigo = 4L;
-
 		VendaDAO vendaDAO = new VendaDAO();
+		Venda venda = vendaDAO.buscar(9L);
 
-		Venda venda = vendaDAO.buscar(codigo);
-		
 		vendaDAO.excluir(venda);
-
 	}
-	
+
 	@Test
+	// @Ignore
 	public void editar() {
-		
-		Long codigo = 5L;
+
+		ClienteDAO clienteDAO = new ClienteDAO();
+		Cliente cliente = clienteDAO.buscar(2L);
+
+		FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+		Funcionario funcionario = funcionarioDAO.buscar(3L);
 
 		VendaDAO vendaDAO = new VendaDAO();
+		Venda venda = vendaDAO.buscar(2L);
 
-		Venda venda = vendaDAO.buscar(codigo);
-		
+		venda.setCliente(cliente);
+		venda.setFuncionario(funcionario);
 		venda.setHorario(new Date());
-		venda.setValorTotal(new BigDecimal("5.50"));
-		
-		vendaDAO.editar(venda);
-		
-	}
+		venda.setValorTotal(new BigDecimal("945.10"));
 
+		vendaDAO.editar(venda);
+	}
 }

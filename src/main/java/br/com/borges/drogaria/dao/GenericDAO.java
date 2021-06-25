@@ -1,6 +1,7 @@
 package br.com.borges.drogaria.dao;
 
 import java.lang.reflect.ParameterizedType;
+
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -8,7 +9,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
-import br.com.borges.drogaria.util.HibernateUtil;;
+import br.com.borges.drogaria.util.HibernateUtil;
 
 public class GenericDAO<Entidade> {
 
@@ -20,7 +21,7 @@ public class GenericDAO<Entidade> {
 				.getActualTypeArguments()[0];
 	}
 
-	public void salvar (Entidade entidade) {
+	public void salvar(Entidade entidade) {
 		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession();
 		Transaction transacao = null;
 
@@ -39,7 +40,7 @@ public class GenericDAO<Entidade> {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List <Entidade> listar() {
+	public List<Entidade> listar() {
 
 		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession();
 		try {
@@ -53,7 +54,7 @@ public class GenericDAO<Entidade> {
 	}
 
 	@SuppressWarnings("unchecked")
-	public Entidade buscar (Long codigo) {
+	public Entidade buscar(Long codigo) {
 		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession();
 		try {
 			Criteria consulta = sessao.createCriteria(classe);
@@ -67,13 +68,13 @@ public class GenericDAO<Entidade> {
 		}
 	}
 
-	public void excluir (Entidade entidade) {
+	public void excluir(Entidade entidade) {
 		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession();
 		Transaction transacao = null;
 
 		try {
 			transacao = sessao.beginTransaction();
-			sessao.delete (entidade);
+			sessao.delete(entidade);
 			transacao.commit();
 		} catch (RuntimeException erro) {
 			if (transacao != null) {
@@ -84,14 +85,14 @@ public class GenericDAO<Entidade> {
 			sessao.close();
 		}
 	}
-	
-	public void editar (Entidade entidade) {
+
+	public void editar(Entidade entidade) {
 		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession();
 		Transaction transacao = null;
 
 		try {
 			transacao = sessao.beginTransaction();
-			sessao.update (entidade);
+			sessao.update(entidade);
 			transacao.commit();
 		} catch (RuntimeException erro) {
 			if (transacao != null) {
