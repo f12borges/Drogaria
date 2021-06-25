@@ -19,7 +19,7 @@
 </h4>
 
 
-📋 Tabela de conteúdos
+📋 Tabela de conteúdos  
 =================
 <!--ts-->
    * [Sobre o projeto](#-sobre-o-projeto)
