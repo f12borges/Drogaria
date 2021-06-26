@@ -37,7 +37,7 @@ public class EstadoDAOTest {
 	}
 
 	@Test
-	@Ignore
+	//@Ignore
 	public void buscar() {
 
 		EstadoDAO estadoDAO = new EstadoDAO();

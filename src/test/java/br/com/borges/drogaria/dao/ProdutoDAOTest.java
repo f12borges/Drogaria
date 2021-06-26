@@ -12,6 +12,7 @@ import br.com.borges.drogaria.domain.Produto;
 
 public class ProdutoDAOTest {
 
+	@SuppressWarnings("removal")
 	@Test
 	@Ignore
 	public void salvar() {
@@ -77,6 +78,7 @@ public class ProdutoDAOTest {
 		produtoDAO.excluir(produto);
 	}
 
+	@SuppressWarnings("removal")
 	@Test
 	@Ignore
 	public void editar() {		
