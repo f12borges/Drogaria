@@ -10,7 +10,6 @@ import br.com.borges.drogaria.domain.Pessoa;
 
 public class PessoaDAOTest {
 
-	@SuppressWarnings("removal")
 	@Test
 	@Ignore
 	public void salvar() {
@@ -97,7 +96,6 @@ public class PessoaDAOTest {
 		pessoaDAO.excluir(pessoa);
 	}
 
-	@SuppressWarnings("removal")
 	@Test
 	@Ignore
 	public void editar() {
