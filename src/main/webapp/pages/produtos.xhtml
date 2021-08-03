@@ -1,31 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:h="http://xmlns.jcp.org/jsf/html"
-	  xmlns:p="http://primefaces.org/ui"
-	  xmlns:f="http://xmlns.jcp.org/jsf/core">
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Cidades</title>
+	<title>Produtos</title>
 </h:head>
 <h:body>
-	
 	<h:form>
-		<p:panel header="Cidade - Listagem">
+		<p:panel header="Produtos - Listagem">
 			<p:dataTable
 				emptyMessage="Nenhum registro encontrado (sem tabela definida)."
 				paginator="true">
 
 				<!--Para colocar o botão na parte superior pode utilizar o header.-->
 				<f:facet name="footer">
-					<p:commandButton value="Nova Cidade"
+					<p:commandButton value="Novo Produto"
 						oncomplete="PF('dialogo').show();" />
 				</f:facet>
 
-				<p:column headerText="Nome" sortBy="" filterBy="">
+				<p:column headerText="Descrição" sortBy="" filterBy="">
 				</p:column>
 
-				<p:column headerText="Estado" sortBy="" filterBy="">
+				<p:column headerText="Quantidade" sortBy="" filterBy="">
+				</p:column>
+
+				<p:column headerText="Preço" sortBy="" filterBy="">
+				</p:column>
+
+				<p:column headerText="Fabricante" sortBy="" filterBy="">
 				</p:column>
 
 				<p:column headerText="Opções">
@@ -38,13 +43,20 @@
 		draggable="false" resizable="false" modal="true" closable="false">
 		<h:form>
 			<h:panelGrid columns="2">
-				<p:outputLabel value="Nome:" />
-				<p:inputText maxlength="50" size="30" />
-
-				<p:outputLabel value="Estado:" />
+			<p:outputLabel value="Descrição:"/>
+			<p:inputText maxlength="50" size="30"/>
+			
+			<p:outputLabel value="Quantidade:"/>
+			<p:inputText maxlength="5" size="10"/>
+			
+			<p:outputLabel value="Preço:"/>
+			<p:inputText maxlength="5" size="10"/>
+			
+			<p:outputLabel value="Fabricante" />
 				<p:selectOneMenu filter="true">
-				<f:selectItem itemValue="" itemLabel="Selecione um estado."/>
+				<f:selectItem itemValue="" itemLabel="Selecione um fabricante."/>
 				</p:selectOneMenu>
+				
 			</h:panelGrid>
 
 			<h:panelGrid columns="2">
@@ -53,6 +65,6 @@
 			</h:panelGrid>
 		</h:form>
 	</p:dialog>
- 
+
 </h:body>
 </html>
