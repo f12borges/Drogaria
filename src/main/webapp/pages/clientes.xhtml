@@ -6,31 +6,31 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Produtos</title>
+	<title>Clientes</title>
 </h:head>
 <h:body>
 	<h:form>
-		<p:panel header="Produtos - Listagem">
+		<p:panel header="Clientes - Listagem">
 			<p:dataTable
 				emptyMessage="Nenhum registro encontrado (sem tabela definida)."
 				paginator="true">
-
+				
 				<!--Para colocar o botão na parte superior pode utilizar o header.-->
 				<f:facet name="footer">
 					<p:commandButton value="Novo Produto"
 						oncomplete="PF('dialogo').show();" />
 				</f:facet>
 
-				<p:column headerText="Descrição" sortBy="" filterBy="">
+				<p:column headerText="Nome">
 				</p:column>
 
-				<p:column headerText="Quantidade" sortBy="" filterBy="">
+				<p:column headerText="CPF">
 				</p:column>
 
-				<p:column headerText="Preço" sortBy="" filterBy="">
+				<p:column headerText="Data de Cadastro">
 				</p:column>
 
-				<p:column headerText="Fabricante" sortBy="" filterBy="">
+				<p:column headerText="Liberado">
 				</p:column>
 
 				<p:column headerText="Opções">
@@ -38,33 +38,29 @@
 			</p:dataTable>
 		</p:panel>
 	</h:form>
-
+	
 	<p:dialog header="Cidades - Cadastro" widgetVar="dialogo"
 		draggable="false" resizable="false" modal="true" closable="false">
-		<h:form>
+		<h:form>		
 			<h:panelGrid columns="2">
-				<p:outputLabel value="Descrição:" />
-				<p:inputText maxlength="50" size="30" />
-
-				<p:outputLabel value="Quantidade:" />
-				<p:inputText maxlength="5" size="10" />
-
-				<p:outputLabel value="Preço:" />
-				<p:inputText maxlength="5" size="10" />
-
-				<p:outputLabel value="Fabricante" />
-				<p:selectOneMenu filter="true">
-					<f:selectItem itemValue="" itemLabel="Selecione um fabricante." />
+			
+				<p:outputLabel value="Pessoa:" />
+				<p:selectOneMenu value="true">
+					<f:selectItem itemValue="" itemLabel="Selecione uma pessoa." />
 				</p:selectOneMenu>
-
+				
+				<p:outputLabel value="Data de Cadastro:"/>
+				<p:calendar/>
+				
+				<p:outputLabel value="Ativo:"/>
+				<p:selectBooleanCheckbox/>		
 			</h:panelGrid>
-
+			
 			<h:panelGrid columns="2">
 				<p:commandButton value="Salvar" />
 				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
-			</h:panelGrid>
+			</h:panelGrid>			
 		</h:form>
 	</p:dialog>
-
 </h:body>
 </html>
