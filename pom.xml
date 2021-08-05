@@ -11,7 +11,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-	<!-- Parâmetros de execução -->
+	<!--Parâmetros de execução-->
 	<build>
 		<!-- Nome do projeto empacotado -->
 		<finalName>Drogaria</finalName>
