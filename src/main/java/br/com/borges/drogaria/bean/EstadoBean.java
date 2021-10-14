@@ -10,6 +10,7 @@ public class EstadoBean {
 		String texto = "Exemplo SEVERITY_INFO";
 		FacesMessage mensagem = new FacesMessage(FacesMessage.SEVERITY_INFO, texto, texto);		
 		FacesContext contexto = FacesContext.getCurrentInstance();
-		contexto.addMessage(null, mensagem);		
+		contexto.addMessage(null, mensagem);	
+		
 	}
 }
