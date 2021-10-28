@@ -12,12 +12,12 @@ public class FabricanteDAOTest {
 	@Test
 	@Ignore
 	public void salvar() {
-		
+
 		FabricanteDAO fabricanteDAO = new FabricanteDAO();
 		Fabricante fabricante = new Fabricante();
-		
+
 		fabricante.setDescricao("Sinovac");
-		
+
 		fabricanteDAO.salvar(fabricante);
 	}
 
@@ -43,7 +43,7 @@ public class FabricanteDAOTest {
 	public void buscar() {
 
 		FabricanteDAO fabricanteDAO = new FabricanteDAO();
-		Fabricante fabricante = fabricanteDAO.buscar(1L);
+		Fabricante fabricante = fabricanteDAO.buscar(3L);
 
 		// Teste de busca de registros.
 		System.out.println("Buscar:");
@@ -70,7 +70,24 @@ public class FabricanteDAOTest {
 		Fabricante fabricante = fabricanteDAO.buscar(4L);
 
 		fabricante.setDescricao("Pfizer");
-		
+
 		fabricanteDAO.editar(fabricante);
+	}
+
+	@Test
+	//@Ignore
+	public void merge() {
+
+//		FabricanteDAO fabricanteDAO = new FabricanteDAO();
+//		Fabricante fabricante = new Fabricante();
+		
+//		fabricante.setDescricao("Fabricante A");		
+//		fabricanteDAO.merge(fabricante);
+
+		FabricanteDAO fabricanteDAO = new FabricanteDAO();
+		Fabricante fabricante = fabricanteDAO.buscar(4L);
+		fabricante.setDescricao("Fabricante B");
+		fabricanteDAO.merge(fabricante);
+
 	}
 }
