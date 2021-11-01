@@ -1,23 +1,31 @@
 package br.com.borges.drogaria.bean;
 
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.context.FacesContext;
+import javax.faces.bean.ViewScoped;
 
 import org.omnifaces.util.Messages;
 
+import br.com.borges.drogaria.domain.Estado;
+
 @ManagedBean
+@ViewScoped
 public class EstadoBean {
+
+	private Estado estado;
+
+	public Estado getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Estado estado) {
+		this.estado = estado;
+	}
+
+	public void novo() {
+		estado = new Estado();
+	}
+
 	public void salvar() {
-		
-//		String texto = "Exemplo SEVERITY_INFO";
-//		FacesMessage mensagem = new FacesMessage(FacesMessage.SEVERITY_INFO, texto, texto);
-//
-//		FacesContext contexto = FacesContext.getCurrentInstance();
-//		contexto.addMessage(null, mensagem);
-		
-//		Messages.addGlobalInfo(" Exemplo: OmniFaces Messages.addGlobalInfo");
-		
-		Messages.addGlobalError(" Exemplo: OmniFaces Messages.addGlobalInfo");
+		Messages.addGlobalInfo("Nome: " + estado.getNome() + " Sigla: " + estado.getSigla());
 	}
 }
