@@ -21,7 +21,7 @@
 				<!--Para colocar o botão na parte superior pode utilizar o header.-->
 				<f:facet name="header">
 					<p:commandButton value="Novo Estado" oncomplete="PF('dialogo').show();"
-					actionListener="#{estadoBean.novo()}"/>
+					actionListener="#{estadoBean.novo()}" update=":formCadastro:painel"/>
 				</f:facet>
 				<p:column headerText="Nome" sortBy="" filterBy="">
 				</p:column>
@@ -32,10 +32,12 @@
 			</p:dataTable>
 		</p:panel>
 	</h:form>
+	
 	<p:dialog header="Estados - Cadastro" widgetVar="dialogo"
 		draggable="false" resizable="false" modal="true" closable="false">
-		<h:form>
-			<h:panelGrid columns="2">
+		
+		<h:form id="formCadastro">
+			<h:panelGrid id="painel" columns="2">
 				<p:outputLabel value="Nome:" />
 				<p:inputText maxlength="50" size="30" value="#{estadoBean.estado.nome}"/>
 				<p:outputLabel value="UF:" />
@@ -47,6 +49,7 @@
 				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
 			</h:panelGrid>
 		</h:form>
+		
 	</p:dialog>
 </h:body>
 </html>
