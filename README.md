@@ -1,5 +1,5 @@
 <h1 align="center">
-     🩹💊💉 Drogaria
+    Drogaria
 </h1>
 
 <h4 align="center">
@@ -19,29 +19,8 @@
 </h4>
 
 
-📋 Tabela de conteúdos  
-=================
-<!--ts-->
-   * [Sobre o projeto](#-sobre-o-projeto)
-   * [Layout](#-layout)
-   * [Pré-requisitos](#-pré-requisitos)
-     * [Baixando o projeto](#-baixando-o-projeto)
-     * [Executando o projeto](#-executando-o-projeto)
-   * [Contribuições](#-contribuições)
-   * [Autor](#-autor)
-   * [Licença](#-licença)
-
-<!--te-->
-
 ## 💻 Sobre o projeto
 Este projeto tem como objetivo atender uma drogaria com as funcionalidades básicas de controle de pessoas, funcionários, clientes, fabricantes, usuários, produtos e vendas.
-
----
-
-
-## 🧩 Layout
-
-O layout do programa será desenvolvido em breve.
 
 ---
 
@@ -49,10 +28,11 @@ O layout do programa será desenvolvido em breve.
 
 Para executar o projeto, será necessário instalar os seguintes programas:
 
-- [Git](https://git-scm.com) Necessário para realizar o download do projeto.
 - [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk10-downloads-4416644.html) Necessário para executar o projeto Java.
-- [Eclipse](https://www.eclipse.org/downloads/packages/release/2021-03/r/eclipse-ide-java-developers) Para desenvolvimento do projeto.
+- [Eclipse](https://www.eclipse.org/downloads/packages/release/2021-03/r/eclipse-ide-java-developers) Para importar o projeto.
 - [MySQL Workbench](https://dev.mysql.com/downloads/windows/installer/8.0.html) Banco de dados utilizado no projeto.
+
+---
 
 ### 💽 Baixando o projeto
 
@@ -63,6 +43,9 @@ cd "diretorio de sua preferencia"
 # Clone este repositório
 git clone https://github.com/f12borges/Drogaria
 ```
+
+---
+
 #### ⏭ Executando o projeto
 
 Passos:
@@ -88,38 +71,3 @@ para validate) para que as tabelas sejam criadas no banco.
 
 Execute o HibernateUtilTest.java com Run As JUnit Test para que as tabelas sejam criadas.
 ```
----
-## 🤜🏻🤛🏻 Contribuições
-
-Contribuições são sempre bem-vindas!
-
-Para contribuir:
-1. Faça um **fork** do projeto.
-2. Crie uma nova branch com as suas alterações: `git checkout -b my-feature`
-3. Salve as alterações e crie uma mensagem de commit contando o que você fez: `git commit -m "feature: My new feature"`
-4. Envie as suas alterações: `git push origin my-feature`
-> Caso tenha alguma dúvida confira este [guia de como contribuir no GitHub](./CONTRIBUTING.md)
-
----
-
-## 🧔🏻 Autor
-
-<a href="https://www.linkedin.com/in/f12borges/">
- <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/60994456?v=4" width="100px;" alt=""/>
- <br />
-
- <sub><b>Fernando Borges</b></sub></a> <a href="https://www.linkedin.com/in/f12borges/">🚀</a>
- <br />
-
-[![Twitter Badge](https://img.shields.io/badge/-@f12borges-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/f12borges)](https://twitter.com/f12borges) [![Linkedin Badge](https://img.shields.io/badge/-Fernando_Borges-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/f12borges/)](https://www.linkedin.com/in/f12borges/)
-[![Gmail Badge](https://img.shields.io/badge/-f12borges@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:tgmarinho@gmail.com)](mailto:f12borges@gmail.com)
-
----
-
-## 📝 Licença
-
-Este projeto esta sobe a licença [MIT](./LICENSE).
-
-Feito muita dedicação por Fernando Borges 👋🏽 [Entre em contato!](https://www.linkedin.com/in/f12borges/)
-
----

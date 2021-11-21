@@ -7,6 +7,7 @@ import javax.faces.bean.ViewScoped;
 
 import org.omnifaces.util.Messages;
 
+import br.com.borges.drogaria.dao.EstadoDAO;
 import br.com.borges.drogaria.domain.Estado;
 
 @SuppressWarnings("serial")
@@ -29,6 +30,20 @@ public class EstadoBean implements Serializable {
 	}
 
 	public void salvar() {
-		Messages.addGlobalInfo("Nome: " + estado.getNome() + " Sigla: " + estado.getSigla());
+
+		try {
+
+			EstadoDAO estadoDao = new EstadoDAO();
+			estadoDao.salvar(estado);
+
+			novo();
+
+			Messages.addGlobalInfo("Estado salvo com sucesso!");
+
+		} catch (RuntimeException erro) {
+			Messages.addGlobalError("Ocorreu um erro ao salvar o estado");
+			erro.printStackTrace();
+
+		}
 	}
 }
