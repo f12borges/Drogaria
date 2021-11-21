@@ -34,7 +34,7 @@ Para executar o projeto, será necessário instalar os seguintes programas:
 
 ---
 
-### 💽 Baixando o projeto
+## 💽 Baixando o projeto
 
 ```bash
 # Escolha um diretório
@@ -46,7 +46,7 @@ git clone https://github.com/f12borges/Drogaria
 
 ---
 
-#### ⏭ Executando o projeto
+## ⏭ Executando o projeto
 
 Passos:
 1. Para executar o projeto, é necessário importa-lo utilizando o Eclipse, para que o mesmo identifique as dependências necessárias para a execução e baixe-as no repositório .m2 do Maven.
