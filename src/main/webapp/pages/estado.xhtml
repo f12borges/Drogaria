@@ -17,15 +17,18 @@
 		<p:panel header="Estados - Listagem">
 			<p:dataTable
 				emptyMessage="Nenhum registro encontrado (sem tabela definida)."
-				paginator="true">
+				paginator="true" value="#{estadoBean.estados}" var ="estado">
+				
 				<!--Para colocar o botão na parte superior pode utilizar o header.-->
 				<f:facet name="header">
 					<p:commandButton value="Novo Estado" oncomplete="PF('dialogo').show();"
 					actionListener="#{estadoBean.novo()}" update=":formCadastro:painel"/>
 				</f:facet>
 				<p:column headerText="Nome" sortBy="" filterBy="">
+					<h:outputText value="#{estado.nome}" />
 				</p:column>
 				<p:column headerText="UF" sortBy="" filterBy="">
+				<h:outputText value="#{estado.sigla}" />
 				</p:column>
 				<p:column headerText="Opções">
 				</p:column>

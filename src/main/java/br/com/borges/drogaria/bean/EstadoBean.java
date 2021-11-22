@@ -1,7 +1,9 @@
 package br.com.borges.drogaria.bean;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
@@ -16,6 +18,17 @@ import br.com.borges.drogaria.domain.Estado;
 public class EstadoBean implements Serializable {
 
 	private Estado estado;
+	
+	private List<Estado> estados;
+	
+
+	public List<Estado> getEstados() {
+		return estados;
+	}
+
+	public void setEstados(List<Estado> estados) {
+		this.estados = estados;
+	}
 
 	public Estado getEstado() {
 		return estado;
@@ -23,6 +36,21 @@ public class EstadoBean implements Serializable {
 
 	public void setEstado(Estado estado) {
 		this.estado = estado;
+	}
+	
+	@PostConstruct
+	public void listar () {
+		
+		try {
+			EstadoDAO estadoDAO = new EstadoDAO();
+			estados = estadoDAO.listar();
+			
+		}catch(RuntimeException erro) {
+			
+			Messages.addGlobalError("Ocorreu um erro ao tentar listar os estados");
+			erro.printStackTrace();
+			
+		}
 	}
 
 	public void novo() {
