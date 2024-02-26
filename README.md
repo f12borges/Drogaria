@@ -15,7 +15,7 @@
   </p>
 
 <h4 align="center">
-	⚗ PAUSADO. ⚗
+	⚗ PAUSADO ⚗
 </h4>
 
 
