@@ -15,7 +15,7 @@
   </p>
 
 <h4 align="center">
-	⚗ Em desenvolvimento... ⚗
+	⚗ PAUSADO. ⚗
 </h4>
 
 
